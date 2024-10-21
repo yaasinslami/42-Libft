@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr_1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 19:00:48 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/21 19:07:57 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/21 20:01:55 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,29 +41,26 @@ void	compute_lsp_array(const char *to_find, int to_find_len, int *lps)
 	}
 }
 
-char	*kmp_search(const char *str, const char *to_find,
-			int *lps, int str_len, int to_find_len)
+char	*kmp_search(t_kmp *kmp)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (i < str_len)
+	while (i < kmp->str_len)
 	{
-		if (str[i] == to_find[j])
+		if (kmp->str[i] == kmp->to_find[j])
 		{
 			i++;
 			j++;
 		}
-		if (j == to_find_len)
-		{
-			return ((char *)str + i - j);
-		}
-		else if (i < str_len && str[i] != to_find[j])
+		if (j == kmp->to_find_len)
+			return ((char *)kmp->str + i - j);
+		else if (i < kmp->str_len && kmp->str[i] != kmp->to_find[j])
 		{
 			if (j != 0)
-				j = lps[j - 1];
+				j = kmp->lps[j - 1];
 			else
 				i++;
 		}
@@ -73,23 +70,26 @@ char	*kmp_search(const char *str, const char *to_find,
 
 char	*ft_strstr(const char *str, const char *to_find)
 {
-	int		str_len;
-	int		to_find_len;
-	int		*lps;
+	t_kmp	kmp;
 	char	*result;
 
-	str_len = ft_strlen(str);
-	to_find_len = ft_strlen(to_find);
-	if (to_find_len == 0)
-		return ((char *)str);
-	lps = (int *)malloc(sizeof(int) * to_find_len);
-	if (!lps)
+	if (!str || !to_find)
 		return (NULL);
-	compute_lsp_array(to_find, to_find_len, lps);
-	result = kmp_search(str, to_find, lps, str_len, to_find_len);
-	free(lps);
+	kmp.str = str;
+	kmp.to_find = to_find;
+	kmp.str_len = ft_strlen(str);
+	kmp.to_find_len = ft_strlen(to_find);
+	if (kmp.to_find_len == 0)
+		return ((char *)str);
+	kmp.lps = (int *)malloc(sizeof(int) * kmp.to_find_len);
+	if (!kmp.lps)
+		return (NULL);
+	compute_lsp_array(kmp.to_find, kmp.to_find_len, kmp.lps);
+	result = kmp_search(&kmp);
+	free (kmp.lps);
 	return (result);
 }
+
 /*
 #include <stdio.h>
 
