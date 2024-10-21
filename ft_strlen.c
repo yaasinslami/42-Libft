@@ -6,11 +6,11 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 17:17:19 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/18 17:19:37 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/21 14:24:52 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	len;
 
