@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 17:36:33 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/18 17:44:01 by yslami           ###   ########.fr       */
+/*   Created: 2024/10/22 18:47:46 by yslami            #+#    #+#             */
+/*   Updated: 2024/10/22 18:50:52 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	char	*p;
+#include "libft.h"
 
-	p = dest;
-	while (*p)
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
 	{
-		p++;
+		return (c - 32);
 	}
-	while (*src)
-	{
-		*p = *src;
-		p++;
-		src++;
-	}
-	*p = '\0';
-	return (dest);
+	return (c);
 }

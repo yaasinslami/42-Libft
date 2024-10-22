@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 17:23:15 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/18 17:29:17 by yslami           ###   ########.fr       */
+/*   Created: 2024/10/22 18:52:23 by yslami            #+#    #+#             */
+/*   Updated: 2024/10/22 18:54:28 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (src[i] != '\0')
+int	tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
 	{
-		dest[i] = src[i];
-		i++;
+		return (c + 32);
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (c);
 }
