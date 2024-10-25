@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 10:13:41 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 16:58:46 by yslami           ###   ########.fr       */
+/*   Created: 2024/10/24 14:53:52 by yslami            #+#    #+#             */
+/*   Updated: 2024/10/25 17:57:46 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * ft_strlen - Calculates the length of a string.
- *
- * @str: The string whose length is to be calculated.
+ * ft_putchar_fd - write character c on a specified file descriptor
  * 
- * Return: The length of the string @str, excluding the
- * null terminator.
+ * @c: character to write
+ * @fd: file descriptor on which to write
+ * 
+ * Description: The ft_putchar_fd() function writes the character c on the
+ * 				file descriptor fd.
 */
 
-size_t	ft_strlen(const char *str)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	len;
-
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	write(fd, &c, 1);
 }
 
 /*
 int main(void)
 {
-    char str[] = "Hello";
-    int len = ft_strlen(str);
-    
-    ft_putnbr_fd(len, 1);
+    ft_putchar_fd('A', 1);
+    ft_putchar_fd('\n', 1);
     return (0);
 }
 */

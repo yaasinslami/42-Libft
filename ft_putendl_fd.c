@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 17:30:28 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/18 17:36:13 by yslami           ###   ########.fr       */
+/*   Created: 2024/10/24 16:08:28 by yslami            #+#    #+#             */
+/*   Updated: 2024/10/25 17:59:13 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
+#include "libft.h"
 
-	i = 0;
-	while (src[i] && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+/**
+ * ft_putendl_fd - write a string on a specified file descriptor,
+ *                  follow by a newline
+ * 
+ * @s: string to write
+ * @fd: the file descriptor on which to write
+*/
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
+
+/*
+int main()
+{
+    ft_putendl_fd("Hello World", 1);
+    return (0);
+}
+*/

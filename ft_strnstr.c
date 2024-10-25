@@ -6,11 +6,22 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 19:00:48 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/21 23:51:03 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/25 15:34:23 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**
+ * ft_strnstr - locate a substring in a string
+ * 
+ * @big: first string that will be searched in
+ * @little: second string that will be searched for
+ * @len: n
+ * 
+ * Return: return a pointer to the first character of the first
+ * 		occurrence of @little in @big, otherwise return (NULL);
+*/
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -34,17 +45,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
 
+/*
 int main()
 {
-	char	str[] = "Hello ita, world its a test";//27
-	char	str1[] = "its";//3
-	char	*result;
+	char	big[] = "Hello, user how are you ?!";
+	char	little[] = "how";
 
-	result = ft_strnstr(str, str1, 19);
-	printf("%s\n%d\n", result, ft_strlen(str));
+	ft_putendl_fd(ft_strnstr(big, little, ft_strlen(big)), 1);
 	return (0);
 }
 */

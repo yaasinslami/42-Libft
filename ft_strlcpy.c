@@ -6,13 +6,27 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:25:00 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/22 18:39:58 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/25 16:23:14 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlcpy(char *dst, const char *src, size_t size)
+/**
+ * ft_strlcpy - Copies up to size - 1 characters from the
+ * source string to the destination string, null-terminating
+ * the result.
+ *
+ * @dst: The destination buffer to copy the string into.
+ * @src: The source string to copy from.
+ * @size: The size of the destination buffer.
+ * 
+ * Return: The total length of the source string. If the
+ * length is greater than or equal to size, the destination
+ * string will not be null-terminated.
+*/
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	src_len;
 	size_t	i;
@@ -38,3 +52,18 @@ size_t	strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (i);
 }
+
+/*
+int main(void)
+{
+    char dest[20];
+    char src[] = "Hello World";
+    size_t result;
+    
+    result = ft_strlcpy(dest, src, 8);
+    ft_putendl_fd(dest, 1);
+    ft_putnbr_fd(result, 1);
+    ft_putchar_fd('\n', 1);
+    return (0);
+}
+*/
