@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 17:43:40 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/18 17:50:03 by yslami           ###   ########.fr       */
+/*   Created: 2024/10/24 15:21:25 by yslami            #+#    #+#             */
+/*   Updated: 2024/10/25 18:01:12 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
-	char			*p;
+#include "libft.h"
 
-	p = dest;
+/**
+ * ft_putstr_fd - write a string on a specified file descriptor
+ * 
+ * @s: string to write
+ * @fd: file descriptor on which to write
+ * 
+ * Description: Write the string s on the file descriptor fd.
+*/
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	char	*p;
+
+	if (!s)
+		return ;
+	p = s;
 	while (*p)
 	{
+		ft_putchar_fd(*p, fd);
 		p++;
 	}
-	i = 0;
-	while (*src && i < n)
-	{
-		*p = *src;
-		p++;
-		src++;
-		i++;
-	}
-	*p = '\0';
-	return (dest);
 }
+
+/*
+int main()
+{
+	ft_putstr_fd("Hello World", 1);
+    ft_putchar_fd('\n', 1);
+	return (0);
+}
+*/
