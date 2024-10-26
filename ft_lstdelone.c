@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:38:11 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 20:42:01 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/26 11:27:51 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int main(void)
     if (last)
     {
         ft_lstdelone(last, del_content);
+		lst->next = curr;
     }
 
     // Print list after deletion
@@ -78,9 +79,8 @@ int main(void)
         ft_putendl_fd(curr->content, 1);
         curr = curr->next;
     }
-	//ft_lstdelone(lst, del_content);
     // Clean up the remaining list
     ft_lstclear(&lst, del_content);
-    return 0;
+    return (0);
 }
 */
