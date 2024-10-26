@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:50:05 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/26 11:10:36 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/26 12:17:24 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*curr;
 	t_list	*temp;
 
-	if (!lst)
+	if (!lst || !del)
 		return ;
 	curr = *lst;
 	while (curr)
