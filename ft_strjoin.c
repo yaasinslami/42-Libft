@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:27:10 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 21:23:00 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/26 13:54:20 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		return (ft_strdup(s1));
 	}
-	if (!s1 && !s2)
+	if (!s1 && s2)
 	{
 		return (ft_strdup(s2));
 	}

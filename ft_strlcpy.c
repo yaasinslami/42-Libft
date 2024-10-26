@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:25:00 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 16:23:14 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/26 18:25:39 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @dst: The destination buffer to copy the string into.
  * @src: The source string to copy from.
  * @size: The size of the destination buffer.
- * 
+ *
  * Return: The total length of the source string. If the
  * length is greater than or equal to size, the destination
  * string will not be null-terminated.
@@ -59,8 +59,8 @@ int main(void)
     char dest[20];
     char src[] = "Hello World";
     size_t result;
-    
-    result = ft_strlcpy(dest, src, 8);
+
+    result = ft_strlcpy(dest, src + 2, 4);
     ft_putendl_fd(dest, 1);
     ft_putnbr_fd(result, 1);
     ft_putchar_fd('\n', 1);

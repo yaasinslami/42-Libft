@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 23:42:39 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 13:27:52 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/26 18:52:47 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 /**
  * ft_calloc - memory allocation
- * 
+ *
  * @nmemb: number of cases to allocate
  * @size: size of each element
- * 
+ *
  * Description: ft_calloc function allocate memory
  * 				The allocated memory is filled with bytes of value zero.
- * 
+ *
  * Return: returns a pointer to allocated memory If successful
  * 			otherwise return (NULL)
 */
@@ -29,6 +29,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
+	if (nmemb == 0 || size == 0)
+	{
+		nmemb = 1;
+		size = 1;
+	}
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 	{
@@ -46,7 +51,6 @@ int main()
 	while (i < 5)
 	{
 		ft_putnbr_fd(nums[i], 1);
-		write(1, &nums[i], 1);
 		i++;
 	}
 	free(nums);

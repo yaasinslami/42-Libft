@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 17:13:22 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 16:08:30 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/26 18:39:56 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @strings: Pointer to an array of string pointers to be filled.
  * @s: Input string to split.
  * @sep: Delimiter character used to split the string.
- * 
+ *
  * Return: 1 if allocation is successful, 0 otherwise.
 */
 
@@ -56,7 +56,7 @@ static int	ft_allocate(char **strings, char const *s, char sep)
  *
  * @s: Input string to count words from.
  * @c: Delimiter character.
- * 
+ *
  * Return: The number of words found in the string.
 */
 
@@ -89,7 +89,7 @@ static int	ft_count_words(char const *s, char c)
  *
  * @s: String to split.
  * @c: Delimiter character.
- * 
+ *
  * Return: Pointer to an array of new strings or NULL
  * if allocation fails or if the input string is NULL.
 */
@@ -100,9 +100,7 @@ char	**ft_split(char const *s, char c)
 	int		count;
 
 	if (!s)
-	{
 		return (NULL);
-	}
 	count = ft_count_words(s, c);
 	strings = (char **)malloc((count + 1) * sizeof(char *));
 	if (!strings)
@@ -112,7 +110,8 @@ char	**ft_split(char const *s, char c)
 		count = 0;
 		while (strings[count])
 		{
-			free(strings[count]);
+			if (strings[count])
+				free(strings[count]);
 			count++;
 		}
 		free(strings);
@@ -124,15 +123,24 @@ char	**ft_split(char const *s, char c)
 /*
 int	main()
 {
-	char	str[] = "Eu vou ser splitado!";
+	char	str[] = "Hello, World how are you";
 	char	c = ' ';
 	char	**spt = ft_split(str, c);
+	if (!spt)
+		return (0);
 	int	i = 0;
 	while (spt[i] != 0)
 	{
 		ft_putendl_fd(spt[i], 1);
 		i++;
 	}
-	ft_putchar_fd('\n', 1);
+	i = 0;
+	while (spt[i])
+	{
+		free(spt[i]);
+		i++;
+	}
+	free(spt);
+	return (0);
 }
 */

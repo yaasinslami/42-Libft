@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 19:07:32 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 16:13:21 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/26 18:41:38 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  *
  * @s: The string to search in.
  * @c: The character to locate (ASCII representation).
- * 
+ *
  * Return: A pointer to the first occurrence of @c in @s,
  * or NULL if @c is not found. If @c is '\0', it returns
  * a pointer to the null terminator of the string.
@@ -46,8 +46,8 @@ char	*ft_strchr(const char *s, int c)
 /*
 int main()
 {
-	char s[] = "Hello , World";
-	int c = 'W';
+	char s[] = "Hello ,World";
+	int c = '\0';
 
 	ft_putendl_fd(ft_strchr(s, c), 1);
 	return (0);
