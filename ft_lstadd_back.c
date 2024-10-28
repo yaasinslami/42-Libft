@@ -6,11 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:55:17 by yslami            #+#    #+#             */
-<<<<<<< HEAD
 /*   Updated: 2024/10/28 15:28:25 by yslami           ###   ########.fr       */
-=======
-/*   Updated: 2024/10/27 14:25:24 by yslami           ###   ########.fr       */
->>>>>>> 8ef7f1f51330c03d0cf8125f2bf780e1a346a744
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +25,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*curr;
 
-<<<<<<< HEAD
 	if (!lst || !new)
 		return ;
-=======
->>>>>>> 8ef7f1f51330c03d0cf8125f2bf780e1a346a744
 	if (lst && *lst)
 	{
 		curr = *lst;
