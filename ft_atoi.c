@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 22:32:57 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 15:54:27 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 04:39:26 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,11 @@ int	ft_atoi(const char *str)
 /*
 int main()
 {
-	char str1[] = "15613";
-	char str2[] = "-15613";
-	char str3[] = "+15asd613";
-	char str4[] = "-1561dase3";
+	char str1[] = "  +2147484364";
+
 	ft_putnbr_fd(ft_atoi(str1), 1);
 	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(ft_atoi(str2), 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(ft_atoi(str3), 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(ft_atoi(str4), 1);
-	ft_putchar_fd('\n', 1);
+
+	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:08:17 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 20:42:20 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 15:35:35 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (lst == NULL || new == NULL)
+		return ;
 	new->next = *lst;
 	*lst = new;
 }

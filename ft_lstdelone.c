@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:38:11 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/26 12:37:43 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:13:02 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst == NULL || del == NULL)
+	if (!lst || !del)
 		return ;
 	(*del)(lst->content);
 	free(lst);
@@ -66,7 +66,7 @@ int main(void)
     if (last)
     {
         ft_lstdelone(last, del_content);
-		lst->next = curr;
+		lst->next = curr;// or lst->next = NULL;
     }
 
     // Print list after deletion

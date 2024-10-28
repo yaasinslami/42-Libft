@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 23:40:57 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 20:48:44 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 03:34:01 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <string.h>
 
 /* LIBC Functions */
 int		ft_isalpha(int c);

@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:24:21 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 21:18:26 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 07:45:02 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,41 @@
  *         if allocation fails.
  */
 
+static	t_list	*create_maped_list(t_list **new_head, t_list *lst,
+	void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new_node;
+	char	*u_content;
+
+	while (lst)
+	{
+		u_content = f(lst->content);
+		if (!u_content)
+		{
+			ft_lstclear(new_head, del);
+			return (NULL);
+		}
+		new_node = ft_lstnew(u_content);
+		if (!new_node)
+		{
+			del(u_content);
+			ft_lstclear(new_head, del);
+			return (NULL);
+		}
+		ft_lstadd_back(new_head, new_node);
+		lst = lst->next;
+	}
+	return (*new_head);
+}
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_head;
-	t_list	*new_node;
-	t_list	*curr;
 
+	if (!lst || !f || !del)
+		return (NULL);
 	new_head = NULL;
-	curr = lst;
-	while (curr)
-	{
-		new_node = ft_lstnew(f(curr->content));
-		if (!new_node)
-		{
-			ft_lstclear(&new_head, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&new_head, new_node);
-		curr = curr->next;
-	}
-	return (new_head);
+	return (create_maped_list(&new_head, lst, f, del));
 }
 
 /*

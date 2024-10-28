@@ -6,12 +6,12 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 23:42:39 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/26 18:52:47 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 06:33:02 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <limits.h>
 /**
  * ft_calloc - memory allocation
  *
@@ -29,16 +29,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-	{
-		nmemb = 1;
-		size = 1;
-	}
+	if (size != 0 && (nmemb != (nmemb * size) / size))
+		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (!ptr)
-	{
 		return (NULL);
-	}
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
@@ -46,14 +41,16 @@ void	*ft_calloc(size_t nmemb, size_t size)
 /*
 int main()
 {
-	int	*nums = (int *)ft_calloc(5, sizeof(int));
-	int i = 0;
-	while (i < 5)
+	size_t	nmemb = 18446744073709551615UL / 2 + 1;
+	size_t	size = 1;
+	void *ptr = calloc(nmemb, size);
+	if (ptr)
 	{
-		ft_putnbr_fd(nums[i], 1);
-		i++;
+		ft_putendl_fd("its calloced!", 1);
+		free(ptr);
 	}
-	free(nums);
+	else
+		ft_putendl_fd("Overflow detected: return NULL as expected.", 1);
 	return (0);
 }
 */

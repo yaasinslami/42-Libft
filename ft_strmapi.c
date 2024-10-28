@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 22:37:21 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 16:28:58 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:11:39 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	size_t	len;
 
-	if (!s)
+	if (!s || !f)
 	{
 		return (ft_strdup(""));
 	}
@@ -57,7 +57,7 @@ char f(unsigned int i, char c)
 int main(void)
 {
     char *result;
-    
+
     result = ft_strmapi("Hello", f);
     if (result)
     {

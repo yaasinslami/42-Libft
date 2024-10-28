@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 19:07:32 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/26 18:41:38 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 14:59:11 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strchr(const char *s, int c)
 /*
 int main()
 {
-	char s[] = "Hello ,World";
+	char s[] = "1337";
 	int c = '\0';
 
 	ft_putendl_fd(ft_strchr(s, c), 1);

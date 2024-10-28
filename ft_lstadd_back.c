@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:55:17 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 20:41:29 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 15:28:25 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,22 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*curr;
 
-	if (*lst == NULL)
+	if (!lst || !new)
+		return ;
+	if (lst && *lst)
+	{
+		curr = *lst;
+		while (curr->next)
+		{
+			curr = curr->next;
+		}
+		curr->next = new;
+	}
+	else if (lst)
 	{
 		*lst = new;
 		return ;
 	}
-	curr = *lst;
-	while (curr->next)
-	{
-		curr = curr->next;
-	}
-	curr->next = new;
 }
 
 /*
@@ -50,7 +55,7 @@ int main(void)
     t_list *lst = NULL;
     t_list *new1, *new2;
 
-    new1 = ft_lstnew(ft_strdup("Node 1"));
+	new1 = ft_lstnew(ft_strdup("Node 1"));
     new2 = ft_lstnew(ft_strdup("Node 2"));
 
     ft_lstadd_back(&lst, new1);

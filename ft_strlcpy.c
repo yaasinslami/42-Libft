@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:25:00 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/26 18:25:39 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 05:07:49 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 int main(void)
 {
     char dest[20];
-    char src[] = "Hello World";
+    char src[] = "HELLO WORLD";
+	//char *src = NULL;
     size_t result;
 
     result = ft_strlcpy(dest, src + 2, 4);

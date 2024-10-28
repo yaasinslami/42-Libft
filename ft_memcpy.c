@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:38:47 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/26 15:34:06 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 07:00:46 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	if (!dest && !src)
 		return (NULL);
+	if (dest == src)
+		return (dest);
 	i = 0;
 	while (i < n)
 	{

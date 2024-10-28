@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:27:10 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/26 13:54:20 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/28 07:15:29 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len2;
 
 	if (!s1 && !s2)
-	{
 		return (ft_strdup(""));
-	}
 	if (s1 && !s2)
-	{
 		return (ft_strdup(s1));
-	}
 	if (!s1 && s2)
-	{
 		return (ft_strdup(s2));
-	}
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	result = (char *)malloc((len1 + len2 + 1) * sizeof(char));
