@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:58:28 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 20:42:55 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:07:55 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ t_list	*ft_lstnew(void *content)
 
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
-	{
 		return (NULL);
-	}
 	new_node->content = content;
 	new_node->next = NULL;
 	return (new_node);

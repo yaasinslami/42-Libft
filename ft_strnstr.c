@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 19:00:48 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 15:34:23 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/27 15:09:47 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 /**
  * ft_strnstr - locate a substring in a string
- * 
+ *
  * @big: first string that will be searched in
  * @little: second string that will be searched for
  * @len: n
- * 
+ *
  * Return: return a pointer to the first character of the first
  * 		occurrence of @little in @big, otherwise return (NULL);
 */

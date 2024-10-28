@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:27:31 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 17:39:51 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:12:08 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
  * @s: The string to iterate over.
  * @f: The function to apply to each character, which takes
  *     an index and a pointer to the character.
- * 
+ *
  * Return: This function does not return a value.
- * 
+ *
  * Note: If @s is NULL, the function will not apply @f.
 */
 
@@ -29,7 +29,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
-	if (!s)
+	if (!s || !f)
 		return ;
 	i = 0;
 	while (s[i])
@@ -48,7 +48,7 @@ void f2(unsigned int i, char *c)
 int main(void)
 {
     char str[] = "Hello";
-    
+
     ft_striteri(str, f2);
     ft_putendl_fd(str, 1);
     return (0);

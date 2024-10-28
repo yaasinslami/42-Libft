@@ -6,12 +6,13 @@
 #    By: yslami <yslami@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/23 15:42:47 by yslami            #+#    #+#              #
-#    Updated: 2024/10/25 21:14:57 by yslami           ###   ########.fr        #
+#    Updated: 2024/10/28 05:07:59 by yslami           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+HEADER = libft.h
 NAME = libft.a
 
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c\
@@ -29,10 +30,13 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 bonus: $(BONUS_OBJS) $(OBJS)
-	ar rc $(NAME) $(BONUS_OBJS) $(OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS) $(OBJS)
+
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS) $(BONUS_OBJS)
@@ -41,6 +45,3 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-
-so: $(OBJS) $(BONUS_OBJS)
-	gcc -shared -o libft.so $(OBJS) $(BONUS_OBJS)

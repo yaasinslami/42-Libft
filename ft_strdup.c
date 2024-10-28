@@ -6,7 +6,7 @@
 /*   By: yslami <yslami@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:06:20 by yslami            #+#    #+#             */
-/*   Updated: 2024/10/25 16:15:14 by yslami           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:27:12 by yslami           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * memory for a new copy of the input string.
  *
  * @s: The string to duplicate.
- * 
+ *
  * Return: A pointer to the newly allocated duplicate string,
  * or NULL if memory allocation fails.
 */
@@ -49,7 +49,7 @@ int main(void)
 {
     char *str = "Hello";
     char *dup;
-    
+
     dup = ft_strdup(str);
     if (dup)
     {
